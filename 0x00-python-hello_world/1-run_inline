@@ -1,0 +1,5 @@
+#!/bin/bash
+echo "#!/usr/bin/python3" > test.py
+echo $PYCODE >> test.py
+chmod u+x test.py
+./test.py
