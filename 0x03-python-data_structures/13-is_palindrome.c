@@ -6,28 +6,38 @@
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *temp = *head, *temp2 = NULL, *head2 = NULL;
+	listint_t *temp = *head/*, *temp2 = NULL, *head2 = NULL*/;
+	int list[1024];
+	int i = 0;
 
 	if (*head == NULL)
 		return (1);
 	while (temp != NULL)
 	{
-		new_f(&head2, temp->n);
+		list[i] = temp->n;
+		/*new_f(&head2, temp->n);*/
 		temp = temp->next;
+		i++;
 	}
+	i--;
 	temp = *head;
-	temp2 = head2;
+	/*temp2 = head2;*/
 	while (temp != NULL)
 	{
-		if (temp->n == temp2->n)
+		/*if (temp->n == temp2->n)
 		{
 			temp = temp->next;
 			temp2 = temp2->next;
+		}*/
+		if (temp->n == list[i])
+		{
+			temp = temp->next;
+			i--;
 		}
 		else
 			break;
 	}
-	free_listint(head2);
+	/*free_listint(head2);*/
 	if (temp == NULL)
 		return (1);
 	return (0);
@@ -37,7 +47,7 @@ int is_palindrome(listint_t **head)
  * @head: address passed by reference
  * @n: value for the new node
  * Return: new node
- */
+ *
 listint_t *new_f(listint_t **head, int n)
 {
 	listint_t *new;
@@ -51,4 +61,4 @@ listint_t *new_f(listint_t **head, int n)
 	new->next = *head;
 	*head = new;
 	return (new);
-}
+}*/
