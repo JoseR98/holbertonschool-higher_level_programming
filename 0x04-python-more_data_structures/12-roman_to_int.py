@@ -4,17 +4,17 @@ def roman_to_int(roman_string):
     if type(roman_string) is not str or not roman_string:
         return 0
     else:
-        list_num = list(let[i] for i in roman_string)
+        l = list(let[i] for i in roman_string if i in let)
         int_num = 0
         num_ones = 0
-        for i in range(0, len(list_num)):
-            if list_num[i] == 1:
+        for i in range(0, len(l)):
+            if l[i] == 1:
                 num_ones += 1
-                int_num += list_num[i]
+                int_num += l[i]
             else:
-                if num_ones == 1 and list_num[i] != 1:
-                    int_num += list_num[i] - 2
+                if num_ones == 1 and l[i] != 1:
+                    int_num += l[i] - 2
                     num_ones = 0
                 else:
-                    int_num += list_num[i]
+                    int_num += l[i]
         return int_num
