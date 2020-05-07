@@ -9,7 +9,7 @@ def roman_to_int(roman_string):
         'D': 500,
         'M': 1000
     }
-    if type(roman_string) != str or roman_string is None:
+    if type(roman_string) != str or not roman_string:
         return 0
     else:
         list_num = list(roman_let[i] for i in roman_string)
