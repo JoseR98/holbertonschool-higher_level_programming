@@ -1,18 +1,10 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    roman_let = {
-        'I': 1,
-        'V': 5,
-        'X': 10,
-        'L': 50,
-        'C': 100,
-        'D': 500,
-        'M': 1000
-    }
-    if type(roman_string) != str or not roman_string:
+    let = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+    if type(roman_string) is not str or not roman_string:
         return 0
     else:
-        list_num = list(roman_let[i] for i in roman_string)
+        list_num = list(let[i] for i in roman_string)
         int_num = 0
         num_ones = 0
         for i in range(0, len(list_num)):
