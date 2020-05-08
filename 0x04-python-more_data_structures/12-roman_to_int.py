@@ -15,6 +15,6 @@ def roman_to_int(roman_string):
                     num_ones = 0
                 else:
                     int_num += l[i]
-            return int_num
+        return int_num
     else:
         return 0
