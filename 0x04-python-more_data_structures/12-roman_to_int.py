@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
     let = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+    int_num = 0
     if type(roman_string) is str and roman_string:
         l = list(let[i] for i in roman_string if i in let)
-        int_num = 0
         num_ones = 0
         for i in range(0, len(l)):
             if l[i] == 1:
@@ -15,6 +15,4 @@ def roman_to_int(roman_string):
                     num_ones = 0
                 else:
                     int_num += l[i]
-        return int_num
-    else:
-        return 0
+    return int_num
