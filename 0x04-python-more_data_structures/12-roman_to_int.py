@@ -4,15 +4,11 @@ def roman_to_int(roman_string):
     int_num = 0
     if type(roman_string) is str and roman_string:
         l = list(let[i] for i in roman_string)
-        num_ones = 0
+        previous = 0
         for i in range(0, len(l)):
-            if l[i] == 1:
-                num_ones += 1
-                int_num += l[i]
+            if previous != 0 and previous < l[i]:
+                int_num += l[i] - (previous * 2)
             else:
-                if num_ones == 1 and l[i] != 1:
-                    int_num += l[i] - 2
-                    num_ones = 0
-                else:
-                    int_num += l[i]
+                int_num += l[i]
+                previous = l[i]
     return int_num
