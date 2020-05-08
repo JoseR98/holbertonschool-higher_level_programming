@@ -6,4 +6,5 @@ def complex_delete(a_dictionary, value):
                 new[key] = a_dictionary[key]
         for key in new.keys():
             del(a_dictionary[key])
+        del(new)
     return a_dictionary
