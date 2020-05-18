@@ -6,6 +6,9 @@ def safe_print_integer_err(value):
     except ValueError as i:
         print("Exception: {}".format(i))
         return False
-    except TypeError as j:
-        print("Exception: {}".format(j))
+    except TypeError as i:
+        print("Exception: {}".format(i))
+        return False
+    except NameError as i:
+        print("Exception: {}".format(i))
         return False
