@@ -72,9 +72,10 @@ class Square:
             print("")
         else:
             for i in range(0, self.size):
-                k = 0
-                for k in range(0, self.position[0]):
-                    print("_", end="")
+                if not self.position[1] > 0:
+                    k = 0
+                    for k in range(0, self.position[0]):
+                        print("_", end="")
                 for j in range(0, self.size):
                     print('#', end="")
                 print("")
