@@ -55,7 +55,9 @@ class Square:
         Args:
             value (tuple): value to set position attribute to.
         """
-        if type(value[0]) is not int or type(value[1]) is not int:
+        if type(value) is not tuple or len(value) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        elif type(value[0]) is not int or type(value[1]) is not int:
             raise TypeError("position must be a tuple of 2 positive integers")
         elif value[0] < 0 or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
@@ -72,7 +74,7 @@ class Square:
             print("")
         else:
             for i in range(0, self.size):
-                if not self.position[1] > 1:
+                if not self.position[1] > 0:
                     k = 0
                     for k in range(0, self.position[0]):
                         print(" ", end="")
