@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 from math import pi
-"""This module two operations for a circumference."""
+"""This module peform two operations for a circumference."""
 
 
 class MagicClass:
