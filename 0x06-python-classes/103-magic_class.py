@@ -5,6 +5,7 @@ from math import pi
 
 class MagicClass:
     """Magic class that can determine area && circumference of a circle"""
+
     def __init__(self, radius=0):
         """__init__ method  """
         self.__radius = 0
