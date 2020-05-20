@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-from math import pi
+import math
 """This module peform two operations for a circumference."""
 
 
@@ -15,8 +15,8 @@ class MagicClass:
 
     def area(self):
         """area method that determines the area of the circle """
-        return ((self.__radius ** 2) * pi)
+        return ((self.__radius ** 2) * math.pi)
 
     def circumference(self):
         """circumference method determines the circumference of the circle """
-        return (self.__radius * 2 * pi)
+        return (self.__radius * 2 * math.pi)
