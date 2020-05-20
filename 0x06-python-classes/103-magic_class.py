@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module peform two operations for a circumference."""
+"""This module peform two operations for a circumference"""
 import math
 
 
