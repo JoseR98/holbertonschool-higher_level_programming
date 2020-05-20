@@ -22,7 +22,7 @@ class Square:
             position (tuple): position in the square.
         """
         self.size = size
-        self.position = position[0], position[1]
+        self.position = position
 
     @property
     def size(self):
