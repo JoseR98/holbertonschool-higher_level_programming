@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-import math
 """This module peform two operations for a circumference."""
+import math
 
 
 class MagicClass:
