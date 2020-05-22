@@ -50,7 +50,7 @@ class TestMaxInteger(unittest.TestCase):
             max_integer(3)
         with self.assertRaises(TypeError):
             max_integer(3.4)
-    
+
     def test_argument_is_boolean(self):
         """Raise TypeError if the argument is a bool"""
         with self.assertRaises(TypeError):
