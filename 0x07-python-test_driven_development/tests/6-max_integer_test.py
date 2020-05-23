@@ -10,6 +10,11 @@ max_integer = __import__('6-max_integer').max_integer
 class TestMaxInteger(unittest.TestCase):
     """Test_maxinteger class to test the max_integer function"""
 
+    self.assertEqual(max_integer([3, 4, 5]), 5)
+    self.assertEqual(max_integer([-6, -2, 5]), 5)
+    self.assertEqual(max_integer([-4, -32, -3]), -3)
+    self.assertEqual(max_integer([7, 7, 7]), 7)
+
     def test_list_is_empty(self):
         """An empty list is given as parameter"""
         self.assertEqual(max_integer([]), None)
@@ -55,6 +60,13 @@ class TestMaxInteger(unittest.TestCase):
         """Raise TypeError if the argument is a bool"""
         with self.assertRaises(TypeError):
             max_integer(True)
+
+    def test_special_chars(self):
+        """
+        Test error cases
+        """
+        with self.assertRaises(TypeError):
+            max_integer("","")
 
 if __name__ == '__main__':
     unittest.main()
