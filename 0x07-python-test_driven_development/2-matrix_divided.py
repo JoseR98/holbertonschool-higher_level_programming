@@ -12,7 +12,7 @@ def matrix_divided(matrix, div):
     Returns:
         list of lists: new matrix with all elements divided"""
 
-    if type(matrix) != list:
+    if type(matrix) != list or matrix == []:
         raise TypeError("matrix must be a matrix\
  (list of lists) of integers/floats")
 
@@ -27,7 +27,7 @@ def matrix_divided(matrix, div):
 
     # validate rows len in matrix and values inside each list
     for i in matrix:
-        if type(i) != list:
+        if type(i) != list or i == []:
             raise TypeError("matrix must be a matrix\
  (list of lists) of integers/floats")
         if len(i) == len_row:
