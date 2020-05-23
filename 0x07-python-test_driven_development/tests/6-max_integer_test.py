@@ -66,7 +66,7 @@ class TestMaxInteger(unittest.TestCase):
         Test error cases
         """
         with self.assertRaises(TypeError):
-            max_integer("","")
+            max_integer("", "")
 
 if __name__ == '__main__':
     unittest.main()
