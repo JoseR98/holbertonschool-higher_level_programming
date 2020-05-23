@@ -89,3 +89,20 @@ Test_8 text argument with special characters without spaces separated
     <BLANKLINE>
     bien y vos?
     <BLANKLINE>
+
+Test_9 No argument
+------------------
+    >>> text_indentation()
+    Traceback (most recent call last):
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+Test_10 just special characters
+-------------------------------
+    >>> text = "?:."
+    >>> text_indentation(text)
+    ?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    .
+    <BLANKLINE>
