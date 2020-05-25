@@ -53,7 +53,7 @@ class Rectangle:
     def __str__(self):
         """Public method that returns a printable rectangle"""
         rect = ""
-        if self.height != 0 or self.width != 0:
+        if self.height != 0 and self.width != 0:
             for i in range(self.height):
                 for j in range(self.width):
                     rect += "{}".format("#")
