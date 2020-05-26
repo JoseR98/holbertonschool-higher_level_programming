@@ -2,6 +2,7 @@
 """This module gives solution to the N queens puzzle"""
 import sys
 
+
 def main():
 
     if len(sys.argv) != 2:
@@ -37,9 +38,10 @@ def accept(i, j, result, size):
         # Test vertical and horizontal
         if i == l[0] or j == l[1]:
             decision = False
-        elif diagonals_check(i, j, l, size) == True:
+        elif diagonals_check(i, j, l, size) is True:
             decision = False
     return decision
+
 
 def diagonals_check(i, j, l, size):
     """diagonals_check determine if position i,j is diagonal to reference value l
@@ -93,6 +95,7 @@ def diagonals_check(i, j, l, size):
         j_change -= 1
     return False
 
+
 def test_position(size, result):
     """test_position [summary]
 
@@ -103,7 +106,7 @@ def test_position(size, result):
     while i < size:
         j = 0
         while j < size:
-            if accept(i, j, result, size) == True:
+            if accept(i, j, result, size) is True:
                 new = [i, j]
                 result.append(new)
                 break
