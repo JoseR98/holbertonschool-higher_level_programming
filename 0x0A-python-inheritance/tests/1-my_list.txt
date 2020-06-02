@@ -6,9 +6,10 @@ This module contains a class called Mylist and inherits a list class.
 It has inside a public class method called print_sorted that prints
 the list in ascending sort. All elements of the list are asumed to be int.
 
-First we import the class, and assign it to Mylist variable:
+First we import the class, and assign it to mylist variable:
 -------------------------------------------------------------
-    >>> mylist = __import__('1-my_list').MyList
+    >>> MyList = __import__('1-my_list').MyList
+    >>> my_list = MyList()
 
 Test cases
 ----------
