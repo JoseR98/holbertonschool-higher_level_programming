@@ -18,5 +18,5 @@ def read_lines(filename="", nb_lines=0):
             print(a_file.read())
         j = 0
         while j < nb_lines:
-            print(a_file.readline(),end="")
+            print(a_file.readline(), end="")
             j += 1
