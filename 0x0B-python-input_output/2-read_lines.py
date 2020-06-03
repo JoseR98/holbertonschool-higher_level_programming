@@ -10,7 +10,7 @@ def read_lines(filename="", nb_lines=0):
         nb_lines (int, optional): lines to read from the file. Defaults to 0.
     """
     num_lines = 0
-    with open(filename, encoding='utf-8') as a_file:
+    with open(filename, encoding='UTF-8') as a_file:
         for i in a_file:
             num_lines += 1
         a_file.seek(0)
