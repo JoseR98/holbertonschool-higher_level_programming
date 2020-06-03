@@ -10,7 +10,7 @@ def write_file(filename="", text=""):
         text (str, optional): string to write inside the file. Defaults to "".
     """
     try:
-        with open("{}".format(filename), "w", encoding="utf-8") as a_file:
+        with open(filename, "w", encoding="utf-8") as a_file:
             num_chars = a_file.write(text)
             return num_chars
     except:
