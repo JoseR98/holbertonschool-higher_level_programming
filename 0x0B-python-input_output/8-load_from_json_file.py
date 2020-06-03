@@ -1,14 +1,14 @@
 #!/usr/bin/python3
-""" """
+"""This module contain a function called load_from_json:file"""
 
 import json
 
 
 def load_from_json_file(filename):
-    """load_from_json_file [summary]
+    """load_from_json_file function that load a json file
 
     Args:
-        filename ([type]): [description]
+        filename (json): json file
     """
     with open(filename, encoding="utf-8") as a_file:
-        return json.load(a_file)
+        return json.loads(a_file.read())
