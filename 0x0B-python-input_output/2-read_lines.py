@@ -21,4 +21,3 @@ def read_lines(filename="", nb_lines=0):
             while j < nb_lines:
                 print(a_file.readline(), end="")
                 j += 1
-
