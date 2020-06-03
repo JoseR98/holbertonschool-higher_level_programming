@@ -9,9 +9,6 @@ def write_file(filename="", text=""):
         filename (str, optional): file name. Defaults to "".
         text (str, optional): string to write inside the file. Defaults to "".
     """
-    try:
-        with open(filename, "w", encoding="utf-8") as a_file:
-            num_chars = a_file.write(text)
-            return num_chars
-    except:
-        raise Exception
+    with open(filename, "w", encoding="utf-8") as a_file:
+        num_chars = a_file.write(text)
+        return num_chars
