@@ -47,5 +47,5 @@ class Student:
         Args:
             json ([type]): json file
         """
-        self.__dict__["first_name"] = json["first_name"]
-        self.__dict__["last_name"] = json["last_name"]
+        for key, value in json.items():
+            self.__dict__[key] = value
