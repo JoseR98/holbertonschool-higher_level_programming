@@ -29,7 +29,7 @@ def pascal_triangle(n):
                     j += 1
                 level.append(1)
                 if i >= 2:
-                    prev =[]
+                    prev = []
                     for k in level:
                         prev.append(k)
             pascal.append(level)
