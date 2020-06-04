@@ -40,4 +40,4 @@ class Student:
                     new[i] = self.__dict__[i]
             if flag:
                 return self.__dict__
-        return new
+            return new
