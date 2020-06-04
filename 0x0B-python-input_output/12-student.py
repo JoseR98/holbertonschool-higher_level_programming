@@ -38,6 +38,6 @@ class Student:
                     break
                 if i in self.__dict__:
                     new[i] = self.__dict__[i]
-            if flag == True:
+            if flag:
                 return self.__dict__
         return new
