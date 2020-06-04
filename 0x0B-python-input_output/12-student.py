@@ -29,7 +29,7 @@ class Student:
         """
         flag = False
         new = {}
-        if type(attrs) != list or attrs == None:
+        if type(attrs) != list or attrs is None:
             return self.__dict__
         else:
             for i in attrs:
