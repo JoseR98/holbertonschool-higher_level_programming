@@ -34,7 +34,6 @@ class Test_Base_outputs(unittest.TestCase):
 
         base_6 = Base(None)
         self.assertEqual(base_6.id, 4)
-
         base_6 = Base(None)
         self.assertEqual(base_6.id, 5)
 

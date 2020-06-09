@@ -15,6 +15,7 @@ class Test_Square_outputs(unittest.TestCase):
     def test_id_setting(self):
         """test_id_setting method that test the id input"""
         Base._Base__nb_objects = 0
+
         Sq1 = Square(2)
         self.assertEqual(Sq1.id, 1)
         Sq2 = Square(4)

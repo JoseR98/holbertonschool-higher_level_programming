@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Unittest for rectangle file: class and methods"""
 
+
 import unittest
 import sys
 from models.rectangle import Rectangle
