@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 """Unittest for base file: class and methods"""
 
+import pep8
 import unittest
 import os
 import json
+from models import base
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
@@ -131,6 +133,36 @@ class Test_Base_outputs(unittest.TestCase):
 
         self.assertDictEqual(list_instances[0].to_dictionary(), R1_d)
         self.assertDictEqual(list_instances[1].to_dictionary(), R2_d)
+
+
+class TestBasepep8(unittest.TestCase):
+    """Validate pep8"""
+
+    def test_pep8(self):
+        """test for base file and test_base file pep8"""
+        style = pep8.StyleGuide(quiet=True)
+        base = "models/base.py"
+        test_base = "tests/test_models/test_base.py"
+        result = style.check_files([base, test_base])
+        self.assertEqual(result.total_errors, 0)
+
+
+class TestDocs(unittest.TestCase):
+    """test docstrings for base and test_base files"""
+
+    def test_module(self):
+        """check module docstrings"""
+        self.assertTrue(len(base.__doc__) > 0)
+
+    def test_class(self):
+        """check class docstrings"""
+        self.assertTrue(len(Base.__doc__) > 0)
+
+    def test_method(self):
+        """check method docstrings"""
+        for func in dir(Base):
+            self.assertTrue(len(func.__doc__) > 0)
+
 
 if __name__ == "__main__":
     unittest.main()

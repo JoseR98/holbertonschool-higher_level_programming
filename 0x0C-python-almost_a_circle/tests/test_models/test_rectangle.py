@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 """Unittest for rectangle file: class and methods"""
 
-
+import pep8
 import unittest
 import sys
+from models import rectangle
 from models.rectangle import Rectangle
 from models.base import Base
 from io import StringIO
@@ -137,6 +138,36 @@ class TestRaiseExceptions(unittest.TestCase):
         # y argument < 0
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             Rec23 = Rectangle(6, 3, 3, -1)
+
+
+class TestRectanglepep8(unittest.TestCase):
+    """Validate pep8"""
+
+    def test_pep8(self):
+        """test for base file and test_base file pep8"""
+        style = pep8.StyleGuide(quiet=True)
+        rectangle = "models/rectangle.py"
+        test_rectangle = "tests/test_models/test_rectangle.py"
+        result = style.check_files([rectangle, test_rectangle])
+        self.assertEqual(result.total_errors, 0)
+
+
+class TestDocs(unittest.TestCase):
+    """test docstrings for rectangle and test_rectangle files"""
+
+    def test_module(self):
+        """check module docstrings"""
+        self.assertTrue(len(rectangle.__doc__) > 0)
+
+    def test_class(self):
+        """check class docstrings"""
+        self.assertTrue(len(Rectangle.__doc__) > 0)
+
+    def test_method(self):
+        """check method docstrings"""
+        for func in dir(Rectangle):
+            self.assertTrue(len(func.__doc__) > 0)
+
 
 if __name__ == "__main__":
     unittest.main()

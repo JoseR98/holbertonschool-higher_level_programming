@@ -2,8 +2,10 @@
 """Unittest for square file: class and methods"""
 
 
+import pep8
 import unittest
 import sys
+from models import square
 from models.square import Square
 from models.base import Base
 from io import StringIO
@@ -125,6 +127,36 @@ class TestRaiseExceptions(unittest.TestCase):
         # y argument < 0
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             Sq23 = Square(6, 3, -3, 1)
+
+
+class TestSquarepep8(unittest.TestCase):
+    """Validate pep8"""
+
+    def test_pep8(self):
+        """test for base file and test_base file pep8"""
+        style = pep8.StyleGuide(quiet=True)
+        square = "models/square.py"
+        test_square = "tests/test_models/test_square.py"
+        result = style.check_files([square, test_square])
+        self.assertEqual(result.total_errors, 0)
+
+
+class TestDocs(unittest.TestCase):
+    """test docstrings for square and test_square files"""
+
+    def test_module(self):
+        """check module docstrings"""
+        self.assertTrue(len(square.__doc__) > 0)
+
+    def test_class(self):
+        """check class docstrings"""
+        self.assertTrue(len(Square.__doc__) > 0)
+
+    def test_method(self):
+        """check method docstrings"""
+        for func in dir(Square):
+            self.assertTrue(len(func.__doc__) > 0)
+
 
 if __name__ == "__main__":
     unittest.main()
