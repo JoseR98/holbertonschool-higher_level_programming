@@ -37,14 +37,16 @@ class Test_Base_outputs(unittest.TestCase):
         of Base class"""
         Base._Base__nb_objects = 0
 
-        python_dict = [{'id': 1, 'x': 3, 'y': 2, 'width': 1, 'height': 2}]
-        json_string = Base.to_json_string(python_dict)
-        self.assertCountEqual(json_string, json.dumps(python_dict))
+        python_dict = {'id': 1, 'x': 3, 'y': 2, 'width': 1, 'height': 2}
+        json_string = Base.to_json_string([python_dict])
+        self.assertEqual(type(json_string), str)
+        self.assertEqual(type(python_dict), dict)
 
         # test empty dict
         python_dict = {}
         json_string = Base.to_json_string(python_dict)
-        self.assertCountEqual(json_string, json.dumps(python_dict))
+        self.assertEqual(type(json_string), str)
+        self.assertEqual(type(python_dict), dict)
 
     def test_save_to_file(self):
         """test_save_to_file test the output of the classmethod"""
@@ -70,9 +72,15 @@ class Test_Base_outputs(unittest.TestCase):
         dict2 = {'id': 2, 'x': 3, 'y': 2, 'width': 1, 'height': 2}
         python_dict_list.append(dict1)
         python_dict_list.append(dict2)
-        json_list = Rectangle.to_json_string(python_dict_list)
-        list_output = Rectangle.from_json_string(json_list)
+        json_string = Rectangle.to_json_string(python_dict_list)
+        list_output = Rectangle.from_json_string(json_string)
         self.assertEqual(list_output, python_dict_list)
+
+        python_dict_list = []
+        json_string = Rectangle.to_json_string(python_dict_list)
+        list_output = Rectangle.from_json_string(json_string)
+        self.assertEqual(list_output, python_dict_list)
+        # Consider input not as a json string
 
     def test_create(self):
         """test_create test output of classmethod"""
