@@ -4,7 +4,6 @@
 
 import json
 import os
-import csv
 
 
 class Base:
@@ -89,7 +88,6 @@ class Base:
         """
         list_obj = []
         if os.path.exists(cls.__name__ + ".json"):
-
             with open(cls.__name__ + ".json", "r", encoding="utf-8") as js_f:
 
                 list_dict = cls.from_json_string(js_f.read())
@@ -97,7 +95,34 @@ class Base:
                     list_obj.append(cls.create(**i))
         return list_obj
 
-    # @classmethod
-    # def save_to_file_csv(cls, list_objs):
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """save_to_file_csv save to csv file
 
-    #    with open(cls.__name__ + ".csv", "w+", encoding="utf-8", newline=''):
+        Args:
+            list_objs ([list]): list
+        """
+        lists = []
+        if len(list_objs) is not 0:
+            for i in list_objs:
+                lists.append(i.to_dictionary())
+        dicts = cls.to_json_string(lists)
+
+        with open(cls.__name__ + ".csv", "w+") as my_file:
+            my_file.write(dicts)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """load_from_file_csv read from csv file
+
+        Returns:
+            [list]: list of objects
+        """
+        list_obj = []
+        if os.path.exists(cls.__name__ + ".csv"):
+            with open(cls.__name__ + ".csv", "r", encoding="utf-8") as js_f:
+
+                list_dict = cls.from_json_string(js_f.read())
+                for i in list_dict:
+                    list_obj.append(cls.create(**i))
+        return list_obj
