@@ -13,9 +13,9 @@ if __name__ == "__main__":
     db = MySQLdb.connect(host="localhost", user=u, passwd=p, db=d, port=3306)
     # get working environment with cursor object
     cur = db.cursor()
-    cur.execute("SELECT cities.name FROM states, cities WHERE\
-    cities.state_id IN (SELECT states.id FROM states WHERE name=%s)\
-    GROUP BY cities.name ORDER BY cities.id ASC", (n, ))
+    cur.execute("""SELECT city.name FROM states as state\
+    join cities as city
+    ON state.id = city.state_id where state.name =%s""", (n, ))
     # get all records of the query
     begin = 0
     for row in cur.fetchall():
