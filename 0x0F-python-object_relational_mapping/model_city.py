@@ -15,6 +15,7 @@ class State(Base):
     id = Column(Integer, primary_key=True, nullable=False)
     name = Column(String(128), nullable=False)
 
+
 class City(Base):
     """City class"""
     __tablename__ = 'cities'
