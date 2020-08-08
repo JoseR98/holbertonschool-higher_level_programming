@@ -16,7 +16,8 @@ if __name__ == "__main__":
     cur.execute("SELECT * FROM states\
     WHERE name='{}' ORDER BY id ASC".format(n))
     # get all records of the query
-    for row in cur.fetchall():
+    records = cur.fetchall()
+    for row in records:
         print(row)
     cur.close()
     db.close()
