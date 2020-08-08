@@ -14,7 +14,7 @@ if __name__ == "__main__":
     # get working environment with cursor object
     cur = db.cursor()
     cur.execute("SELECT * FROM states\
-    WHERE name='{}' ORDER BY id ASC".format(n))
+    WHERE BINARY name='{}' ORDER BY id ASC".format(n))
     # get all records of the query
     records = cur.fetchall()
     for row in records:
