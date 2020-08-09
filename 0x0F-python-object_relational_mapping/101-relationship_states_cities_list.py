@@ -21,9 +21,8 @@ if __name__ == "__main__":
     # Instance of Session class
     session = Session()
 
-    record = session.query(State, City).filter(State.id == City.state_id)
-    order = record.order_by(State.id, City.id).group_by(State.name)
-    for state, city in order:
+    record = session.query(State).order_by(State.id)
+    for state in record:
         print("{}: {}".format(state.id, state.name))
         for cities in state.cities:
-            print("\t{}: {}".format(cities.id, cities.name))
+            print("    {}: {}".format(cities.id, cities.name))
