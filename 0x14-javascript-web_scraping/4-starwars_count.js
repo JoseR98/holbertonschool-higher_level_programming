@@ -7,11 +7,10 @@ request(films, (error, response, body) => {
     console.log(error);
   } else {
     const filmsList = JSON.parse(body).results;
-    const Wedge = 'https://swapi-api.hbtn.io/api/people/18/';
     let numberMovies = 0;
     for (let film = 0; film < filmsList.length; film++) {
       for (let character = 0; character < filmsList[film].characters.length; character++) {
-        if (filmsList[film].characters[character] === Wedge) {
+        if (filmsList[film].characters[character].includes('/18/')) {
           numberMovies++;
         }
       }
