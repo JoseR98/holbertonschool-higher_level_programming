@@ -5,7 +5,6 @@ This repository contains all the project tasks of Holberton School higher level 
 
 ## Table of Contents :book:
 * [About](#About)
-* [Requirements](#Requirements)
 * [Projects](#Projects)
 * [Author](#Author)
 
